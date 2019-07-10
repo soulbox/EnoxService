@@ -4,7 +4,9 @@ Imports System.Runtime.InteropServices
 Imports EasyModbus
 Imports System.Data.SqlClient
 
-
+''' <summary>
+''' First
+''' </summary>
 Public Class KütüpHane
     ''' <summary>
     ''' Sql Connection
