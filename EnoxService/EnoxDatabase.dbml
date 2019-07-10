@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DataCollector" Class="EnoxDatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=DataCollector;Persist Security Info=True;User ID=isikontrol" SettingsObjectName="EnoxService.My.MySettings" SettingsPropertyName="DataCollectorConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DataPointSet" Member="DataPointSets">
+    <Type Name="DataPointSet">
+      <Column Name="Id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DeviceId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Unit" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Label" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastReadId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="CurrentValue" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="MinValue" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="MaxValue" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="DataPointSet_DataValueSet" Member="DataValueSets" ThisKey="Id" OtherKey="DataPointId" Type="DataValueSet" />
+      <Association Name="DeviceSet_DataPointSet" Member="DeviceSet" ThisKey="DeviceId" OtherKey="Id" Type="DeviceSet" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DataValueSet" Member="DataValueSets">
+    <Type Name="DataValueSet">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ValueDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="DataPointId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Association Name="DataPointSet_DataValueSet" Member="DataPointSet" ThisKey="DataPointId" OtherKey="Id" Type="DataPointSet" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DeviceSet" Member="DeviceSets">
+    <Type Name="DeviceSet">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Host" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Port" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Interval" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StartTime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="EndTime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Association Name="DeviceSet_DataPointSet" Member="DataPointSets" ThisKey="Id" OtherKey="DeviceId" Type="DataPointSet" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rapor" Member="Rapors">
+    <Type Name="Rapor">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OdaAdı" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Isı" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Basınç" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="EnoxDatabase">
+  <DataContextMoniker Name="/EnoxDatabaseDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b99c068d-50c0-42e4-b4f4-d74638ad94c1" absoluteBounds="0.875, 0.5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/EnoxDatabaseDataContext/DataPointSet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="872abe9c-1f91-468b-a6b5-0ca7a665746a" absoluteBounds="0.89000000000000012, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9e2a4a82-91cd-4ef0-856e-30ae11ac22ad" absoluteBounds="0.875, 3.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/EnoxDatabaseDataContext/DataValueSet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="566e3008-6d1c-4ccb-afb4-c4d125779cc2" absoluteBounds="0.89000000000000012, 3.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.875 : 3.0401025390625); (1.875 : 3.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EnoxDatabaseDataContext/DataPointSet/DataPointSet_DataValueSet" />
+      <nodes>
+        <classShapeMoniker Id="b99c068d-50c0-42e4-b4f4-d74638ad94c1" />
+        <classShapeMoniker Id="9e2a4a82-91cd-4ef0-856e-30ae11ac22ad" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7a12e1fa-d510-4aaf-a916-6bf78cdb2c4f" absoluteBounds="4.625, 0.5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/EnoxDatabaseDataContext/DeviceSet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6999ce03-e2f3-4879-a6a6-0afd92d6c7f3" absoluteBounds="4.64, 0.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.625 : 1.67390055338542); (2.875 : 1.67390055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EnoxDatabaseDataContext/DeviceSet/DeviceSet_DataPointSet" />
+      <nodes>
+        <classShapeMoniker Id="7a12e1fa-d510-4aaf-a916-6bf78cdb2c4f" />
+        <classShapeMoniker Id="b99c068d-50c0-42e4-b4f4-d74638ad94c1" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="5bbd5ba7-b156-4990-8c69-7de6337d7e9f" absoluteBounds="4.75, 3.125, 2, 1.9631982421875">
+      <DataClassMoniker Name="/EnoxDatabaseDataContext/Rapor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1d060ac8-7034-4d1a-ba24-c359c18a8009" absoluteBounds="4.765, 3.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
